@@ -16,6 +16,8 @@ app.use(cors({
     'http://localhost:5177',
     'https://folioforge-six.vercel.app'
   ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
