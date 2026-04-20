@@ -12,7 +12,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5177',
+  origin: [
+    'http://localhost:5177',
+    'https://folioforge-six.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json({ limit: '10mb' }));
