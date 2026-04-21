@@ -142,7 +142,7 @@ export default function LandingPage() {
       </section>
 
       <footer style={{ textAlign: 'center', padding: '1.5rem', color: 'rgba(232,232,240,0.2)', fontSize: '0.8rem', borderTop: '1px solid rgba(255,255,255,0.05)', fontFamily: 'var(--font-body)' }}>
-        folio.build — Built with React, Node.js &amp; MongoDB
+        FolioForge — Built with React, Node.js &amp; MongoDB
       </footer>
     </div>
   )

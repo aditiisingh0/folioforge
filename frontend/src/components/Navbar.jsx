@@ -29,10 +29,9 @@ export default function Navbar() {
           backgroundClip: 'text', color: '#a78bfa', /* fallback */
           display: 'inline-block',
         }}>
-          folio
+          Folio
         </span>
-        <span style={{ color: '#a78bfa', fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: '1.125rem' }}>.</span>
-        <span style={{ fontFamily: 'Syne, Arial Black, sans-serif', fontWeight: 800, fontSize: '1.125rem', color: '#e8e8f0' }}>build</span>
+        <span style={{ fontFamily: 'Syne, Arial Black, sans-serif', fontWeight: 800, fontSize: '1.125rem', color: '#e8e8f0' }}>Forge</span>
       </Link>
 
       {user ? (
