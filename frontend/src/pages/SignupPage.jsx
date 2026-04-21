@@ -50,7 +50,7 @@ export default function SignupPage() {
         <Link to="/" className="block text-center font-700 text-xl mb-8 gradient-text"
           style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700 }}>
           folio<span style={{ color: '#a78bfa' }}>Forge</span>
-        </Link>git remote -v
+        </Link>
 
         <div className="glass rounded-2xl p-8 animate-fade-up">
           <h1 className="text-2xl font-700 mb-1" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700 }}>Create your account</h1>
