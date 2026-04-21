@@ -37,7 +37,7 @@ export default function LoginPage() {
       <div className="relative z-10 w-full max-w-md">
         <Link to="/" className="block text-center font-700 text-xl mb-8 gradient-text"
           style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700 }}>
-          folio<span style={{ color: '#a78bfa' }}>Forge</span>
+          Folio<span style={{ color: '#a78bfa' }}>Forge</span>
         </Link>
 
         <div className="glass rounded-2xl p-8 animate-fade-up">
