@@ -14,35 +14,54 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6 border-b border-white/5"
-      style={{ background: 'rgba(10,10,15,0.8)', backdropFilter: 'blur(12px)' }}>
-      <Link to="/" className="font-display text-lg font-700 gradient-text mr-auto" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 700 }}>
-        folio<span style={{ color: '#a78bfa' }}>Forge</span>
+    <nav style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+      height: '4rem', display: 'flex', alignItems: 'center', padding: '0 1.5rem',
+      background: 'rgba(10,10,15,0.85)', backdropFilter: 'blur(12px)',
+      WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(255,255,255,0.06)',
+    }}>
+      {/* Brand */}
+      <Link to="/" style={{ marginRight: 'auto', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+        <span style={{
+          fontFamily: 'Syne, Arial Black, sans-serif', fontWeight: 800, fontSize: '1.125rem',
+          background: 'linear-gradient(135deg, #c4b5fd, #818cf8)',
+          WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text', color: '#a78bfa', /* fallback */
+          display: 'inline-block',
+        }}>
+          folio
+        </span>
+        <span style={{ color: '#a78bfa', fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: '1.125rem' }}>.</span>
+        <span style={{ fontFamily: 'Syne, Arial Black, sans-serif', fontWeight: 800, fontSize: '1.125rem', color: '#e8e8f0' }}>build</span>
       </Link>
 
       {user ? (
-        <div className="flex items-center gap-3">
-          <Link to="/dashboard" className="flex items-center gap-1.5 text-sm text-white/60 hover:text-white/90 transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5">
-            <LayoutDashboard size={15} />
-            <span style={{ fontFamily: 'DM Sans, sans-serif' }}>Dashboard</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <Link to="/dashboard" style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', fontSize: '0.875rem', padding: '0.375rem 0.75rem', borderRadius: '0.5rem', fontFamily: 'var(--font-body)', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}>
+            <LayoutDashboard size={14} /> Dashboard
           </Link>
           <Link to={`/portfolio/${user.username}`} target="_blank"
-            className="flex items-center gap-1.5 text-sm text-white/60 hover:text-white/90 transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5">
-            <Eye size={15} />
-            <span style={{ fontFamily: 'DM Sans, sans-serif' }}>View Portfolio</span>
+            style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', color: 'rgba(255,255,255,0.55)', textDecoration: 'none', fontSize: '0.875rem', padding: '0.375rem 0.75rem', borderRadius: '0.5rem', fontFamily: 'var(--font-body)', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.9)'}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.55)'}>
+            <Eye size={14} /> View Portfolio
           </Link>
-          <div className="w-px h-5 bg-white/10 mx-1" />
-          <div className="w-8 h-8 rounded-full bg-violet-600/30 border border-violet-500/30 flex items-center justify-center text-violet-300 text-sm font-600" style={{ fontFamily: 'Syne, sans-serif', fontWeight: 600 }}>
+          <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.1)', margin: '0 0.25rem' }} />
+          <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(124,58,237,0.3)', border: '1px solid rgba(124,58,237,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#c4b5fd', fontSize: '0.875rem', fontFamily: 'var(--font-display)', fontWeight: 600 }}>
             {user.name?.[0]?.toUpperCase()}
           </div>
-          <button onClick={handleLogout} className="p-2 text-white/40 hover:text-white/80 hover:bg-white/5 rounded-lg transition-all">
-            <LogOut size={16} />
+          <button onClick={handleLogout} style={{ padding: '0.375rem', color: 'rgba(255,255,255,0.35)', background: 'none', border: 'none', cursor: 'pointer', borderRadius: '0.5rem', display: 'flex', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
+            onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.35)'}>
+            <LogOut size={15} />
           </button>
         </div>
       ) : (
-        <div className="flex items-center gap-3">
-          <Link to="/login" className="btn-ghost text-sm px-4 py-2">Log in</Link>
-          <Link to="/signup" className="btn-primary text-sm px-4 py-2"><span>Get started</span></Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <Link to="/login" className="btn-ghost" style={{ fontSize: '0.875rem', padding: '0.5rem 1.25rem' }}>Log in</Link>
+          <Link to="/signup" className="btn-primary" style={{ fontSize: '0.875rem', padding: '0.5rem 1.25rem' }}>Get started</Link>
         </div>
       )}
     </nav>
